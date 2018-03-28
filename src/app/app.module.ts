@@ -8,6 +8,7 @@ import { CollectionSinglePage } from '../pages/collectionSingle/collectionSingle
 import { SearchPage } from '../pages/search/search';
 import { DiscoverPage } from '../pages/discover/discover';
 import { ProfilePage } from '../pages/profile/profile';
+import { ProfileEditPage } from '../pages/profileEdit/profileEdit';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ItemPage } from '../pages/item/item';
 import { MoreSinglePage } from '../pages/moreSingle/moreSingle';
@@ -25,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SearchPage,
     DiscoverPage,
     ProfilePage,
+    ProfileEditPage,
     TabsPage,
     ItemPage,
     MoreSinglePage,
@@ -43,6 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SearchPage,
     DiscoverPage,
     ProfilePage,
+    ProfileEditPage,
     TabsPage,
     ItemPage,
     MoreSinglePage,
