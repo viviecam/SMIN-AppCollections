@@ -3,6 +3,12 @@
 .platform-ios page-profile {
     ion-content {
         background-color: #f7f7f7;
+
+
+        .logOutBtn ion-label {
+            margin: 0;
+        }
+
     }
 
 }
