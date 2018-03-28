@@ -4,11 +4,11 @@ import { AjouterItemPage } from '../../pages/ajouterItem/ajouterItem';
 import { ModifierItemPage } from '../../pages/modifierItem/modifierItem';
 
 @Component({
-  selector: 'page-more-single',
-  templateUrl: 'moreSingle.html',
+  selector: 'page-more-profil',
+  templateUrl: 'moreProfil.html',
   
 })
-export class MoreSinglePage {
+export class MoreProfilPage {
 
   constructor(public navCtrl: NavController) { }
 
