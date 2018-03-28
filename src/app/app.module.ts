@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { CollectionsPage } from '../pages/collections/collections';
+import { CollectionSinglePage } from '../pages/collectionSingle/collectionSingle';
 import { SearchPage } from '../pages/search/search';
 import { DiscoverPage } from '../pages/discover/discover';
 import { ProfilePage } from '../pages/profile/profile';
@@ -16,6 +17,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     CollectionsPage,
+    CollectionSinglePage,
     SearchPage,
     DiscoverPage,
     ProfilePage,
@@ -29,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     CollectionsPage,
+    CollectionSinglePage,
     SearchPage,
     DiscoverPage,
     ProfilePage,
