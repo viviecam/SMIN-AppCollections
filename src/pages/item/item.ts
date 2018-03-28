@@ -12,7 +12,7 @@ export class ItemPage {
 
   constructor(public navCtrl: NavController, private popoverCtrl: PopoverController) { }
 
-  retourMesColl(): void {
+  retour(){
     this.navCtrl.pop();
   }
 

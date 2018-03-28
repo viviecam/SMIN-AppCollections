@@ -1,15 +1,10 @@
 <!-- header -->
 <ion-header>
   <ion-toolbar>
-    <ion-buttons start>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="more"></ion-icon>
-      </button>
-    </ion-buttons>
     <ion-title>Mes collections</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="add"></ion-icon>
+      <button ion-button icon-only color="royal" (click)="ajouter()">
+        <ion-icon name="add" ></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -23,16 +18,14 @@
     <img src="https://media0.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" />
     <!-- Pour aller chercher les images -->
     <!-- <img src="../../assets/imgs/logo.png" /> -->
-    <ion-card-content>
+    <ion-card-content (click)="openCollectionSingle()">
       <ion-card-title>
         Le titre
       </ion-card-title>
       <p>
         Une toute petite description comme on les aimes
       </p>
-      <!-- <a href="htts://www.google.fr/">Visualiser</a> -->
-      <!-- <a href="htts://www.google.fr/"><button ion-button clear float-right >Visualiser</button></a> -->
-      <button ion-button clear float-right (click)="openCollectionSingle()" >Visualiser</button>
+      <button ion-button clear float-right  >Visualiser</button>
     </ion-card-content>
   </ion-card>
 </ion-content>
