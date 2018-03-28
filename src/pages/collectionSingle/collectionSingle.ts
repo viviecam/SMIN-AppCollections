@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
-import { NavController, PopoverController} from 'ionic-angular';
+import { NavController, PopoverController, NavParams} from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 
 import { MoreSinglePage } from '../../pages/moreSingle/moreSingle';
 import { ItemPage } from '../../pages/item/item';
@@ -7,7 +8,7 @@ import { ItemPage } from '../../pages/item/item';
 @Component({
   selector: 'page-collection-single',
   templateUrl: 'collectionSingle.html',
-/*  providers: [NavController]
+  /*
 })
 export class CollectionSinglePage {
 
@@ -20,20 +21,35 @@ export class CollectionSinglePage {
 })
 export class CollectionSinglePage {
   
-  constructor(public navCtrl: NavController, private popoverCtrl: PopoverController) { }
+  	constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, private navParams: NavParams, public httpClient: HttpClient) {
+  		this.id = navParams.get('id');
+  	}
 
-  retourMesColl(): void {
-    this.navCtrl.pop();
-  }
+  	ionViewWillEnter(){
+    	this.load();
+ 	}
 
-  openItem(): void {
-    this.navCtrl.push(ItemPage)
-  }
+  	retourMesColl(): void {
+    	this.navCtrl.pop();
+  	}
 
-  more(myEvent) {
-    let popover = this.popoverCtrl.create(MoreSinglePage);
-    popover.present({
-      ev: myEvent
-    });
-  }
+  	openItem(): void {
+    	this.navCtrl.push(ItemPage)
+  	}
+
+  	more(myEvent) {
+	    let popover = this.popoverCtrl.create(MoreSinglePage);
+	    popover.present({
+	      	ev: myEvent
+	    });
+  	}
+
+  	load(){
+	    this.items = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/?action=list&fonction=datas&id=${this.id}`);
+	    console.log(this.items)
+	    this.items
+	    .subscribe(data => {
+      		this.datas = data
+    	})
+ 	}
 }

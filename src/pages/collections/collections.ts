@@ -16,9 +16,9 @@ export class CollectionsPage {
   constructor(public navCtrl: NavController, public httpClient: HttpClient) {  
   }
 
-  openCollectionSingle(): void{
+  openCollectionSingle(id): void{
     this.navCtrl.push(CollectionSinglePage, {
-      id: "1"
+      id: id
     });
   }
 
