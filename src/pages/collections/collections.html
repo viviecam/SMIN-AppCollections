@@ -20,16 +20,16 @@
 
 <!-- contenu -->
 <ion-content padding>
-  <ion-card>
-    <img src="https://media0.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" />
+  <ion-card  *ngFor="let item of datas">
+    <img src={{item.image}} />
     <!-- Pour aller chercher les images -->
     <!-- <img src="../../assets/imgs/logo.png" /> -->
     <ion-card-content>
       <ion-card-title>
-        Le titre
+        {{item.title}}
       </ion-card-title>
       <p>
-        Une toute petite description comme on les aimes
+        {{item.description}}
       </p>
       <button ion-button clear float-right>Visualiser</button>
     </ion-card-content>
