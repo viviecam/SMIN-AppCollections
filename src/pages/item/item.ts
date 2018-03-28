@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { NavController, PopoverController} from 'ionic-angular';
 
-//import { CollectionsPage } from '../../pages/collections/collections';
+import { MoreSingleMSPage } from '../../pages/moreSingleMS/moreSingleMS';
+
 
 @Component({
   selector: 'page-item',
@@ -9,9 +10,16 @@ import { NavController } from 'ionic-angular';
 })
 export class ItemPage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, private popoverCtrl: PopoverController) { }
 
   retourMesColl(): void {
     this.navCtrl.pop();
+  }
+
+  more(myEvent) {
+    let popover = this.popoverCtrl.create(MoreSingleMSPage);
+    popover.present({
+      ev: myEvent
+    });
   }
 }
