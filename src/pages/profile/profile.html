@@ -3,8 +3,9 @@
     <ion-title>Profil</ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon name="more"></ion-icon>
+      <button ion-button icon-only clear>
+        <ion-icon showWhen="android" name="more"></ion-icon>
+        <p showWhen="ios" color="primary">Edit</p>
       </button>
     </ion-buttons>
 
@@ -12,32 +13,48 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-card> -->
+
   <ion-list>
+
     <ion-item-divider text-center>
       <ion-avatar>
         <img src="../../assets/imgs/bb8.jpg">
       </ion-avatar>
-      <h2>Username</h2>
-      <p></p>
+      <h1>username</h1>
+      <br>
     </ion-item-divider>
 
     <ion-item-group>
       <ion-item>
         <ion-icon name="contact" item-start></ion-icon>
-        FirstName LASTNAME
-      </ion-item>
-      <ion-item>
-        <ion-icon name="albums" item-start></ion-icon>
-        <span>10</span> collections
+        Firstname LASTNAME
       </ion-item>
       <ion-item>
         <ion-icon name="mail" item-start></ion-icon>
         loremipsum@email.com
       </ion-item>
+      <ion-item>
+        <ion-icon name="lock" item-start></ion-icon>
+        **********
+      </ion-item>
+      <ion-item>
+        <ion-icon name="albums" item-start></ion-icon>
+        <span>10</span> collections
+      </ion-item>
     </ion-item-group>
-  </ion-list>
-  <!-- </ion-card-content> -->
 
-  <!-- </ion-card> -->
+    <ion-item-divider></ion-item-divider>
+
+    <ion-item-group>
+      <ion-item text-center>
+        <ion-buttons>
+          <button ion-button color="danger" clear>
+            Log out
+          </button>
+        </ion-buttons>
+      </ion-item>
+    </ion-item-group>
+
+  </ion-list>
+
 </ion-content>
