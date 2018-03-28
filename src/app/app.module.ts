@@ -5,10 +5,12 @@ import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { CollectionsPage } from '../pages/collections/collections';
+import { CollectionSinglePage } from '../pages/collectionSingle/collectionSingle';
 import { SearchPage } from '../pages/search/search';
 import { DiscoverPage } from '../pages/discover/discover';
 import { ProfilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ItemPage } from '../pages/item/item';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,10 +19,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     CollectionsPage,
+    CollectionSinglePage,
     SearchPage,
     DiscoverPage,
     ProfilePage,
-    TabsPage
+    TabsPage,
+    ItemPage
   ],
   imports: [
     BrowserModule,
@@ -31,10 +35,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     CollectionsPage,
+    CollectionSinglePage,
     SearchPage,
     DiscoverPage,
     ProfilePage,
-    TabsPage
+    TabsPage,
+    ItemPage
   ],
   providers: [
     StatusBar,
