@@ -10,6 +10,8 @@ import { DiscoverPage } from '../pages/discover/discover';
 import { ProfilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ItemPage } from '../pages/item/item';
+import { MoreSinglePage } from '../pages/moreSingle/moreSingle';
+import { MoreSingleMSPage } from '../pages/moreSingleMS/moreSingleMS';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +25,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DiscoverPage,
     ProfilePage,
     TabsPage,
-    ItemPage
+    ItemPage,
+    MoreSinglePage,
+    MoreSingleMSPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DiscoverPage,
     ProfilePage,
     TabsPage,
-    ItemPage
+    ItemPage,
+    MoreSinglePage,
+    MoreSingleMSPage
   ],
   providers: [
     StatusBar,
