@@ -13,10 +13,13 @@ export class CollectionsPage {
 
 
 
-  constructor(public navCtrl: NavController) {  }
+  constructor(public navCtrl: NavController, public httpClient: HttpClient) {  
+  }
 
   openCollectionSingle(): void{
-    this.navCtrl.push(CollectionSinglePage);
+    this.navCtrl.push(CollectionSinglePage, {
+      id: "1"
+    });
   }
 
 
@@ -25,7 +28,7 @@ export class CollectionsPage {
  	}
 
  	load(){
-    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/?action=list&fonction=collections&id=${1}`);
+    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/?action=list&fonction=collections&idUser=${1}`);
     console.log(this.collections)
     this.collections
     .subscribe(data => {

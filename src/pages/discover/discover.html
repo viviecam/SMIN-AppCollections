@@ -13,30 +13,15 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card>
-    <img src="../../assets/imgs/stamps2.jpg" />
-    <div class="card-title">Timbres</div>
+  <ion-card   *ngFor="let item of datas">
+    <div class="bg-black">
+      <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + item.image}}" />
+    </div>
+    <div class="card-title">{{item.title}}</div>
     <div class="card-subtitle">par
-      <span>Elisa</span>
+      <span>{{item.user_name}}</span>
     </div>
   </ion-card>
 
-  <ion-card>
-    <img src="../../assets/imgs/stamps1.jpg" />
-    <div class="card-title">Timbres</div>
-    <div class="card-subtitle">par Théophane</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/imgs/stamps2.jpg" />
-    <div class="card-title">Timbres</div>
-    <div class="card-subtitle">par Anthony</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/imgs/stamps1.jpg" />
-    <div class="card-title">Timbres</div>
-    <div class="card-subtitle">par Camille</div>
-  </ion-card>
 
 </ion-content>

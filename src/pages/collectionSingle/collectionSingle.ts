@@ -5,11 +5,15 @@ import { ItemPage } from '../../pages/item/item';
 
 @Component({
   selector: 'page-collection-single',
-  templateUrl: 'collectionSingle.html'
+  templateUrl: 'collectionSingle.html',
+  providers: [NavController]
 })
 export class CollectionSinglePage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, private navParams: NavParams) { 
+  	let id = navParams.get('id');
+  	console.log(id)
+  }
 
   retourMesColl(): void {
     this.navCtrl.pop();
