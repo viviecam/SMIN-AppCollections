@@ -1,14 +1,14 @@
 <!-- header -->
 <ion-header>
   <ion-toolbar>
-    <ion-buttons start>
+    <ion-buttons start left>
       <button ion-button icon-only color="royal" (click)="retour()">
         <ion-icon name="arrow-back"></ion-icon>
         <p color="royal" showWhen="ios">Retour</p>
       </button>
     </ion-buttons>
     <ion-title>Le nom </ion-title>
-    <ion-buttons end >
+    <ion-buttons end>
       <button ion-button icon-only color="royal" (click)="more($event)">
         <ion-icon name="more"></ion-icon>
       </button>
@@ -25,8 +25,8 @@
       </ion-thumbnail>
       <h2>Titre de la collection</h2>
       <p>Quelques mots sur la collection</p>
-      <button ion-button clear item-end >
-          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+      <button ion-button clear item-end>
+        <ion-icon name="ios-arrow-forward" item-end></ion-icon>
       </button>
     </ion-item>
   </ion-list>
