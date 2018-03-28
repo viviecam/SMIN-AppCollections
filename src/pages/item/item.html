@@ -2,12 +2,12 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons start>
-      <button ion-button icon-only color="royal" (click)="retourMesColl()">
+      <button ion-button icon-only color="royal"  (click)="retourMesColl()">
         <ion-icon name="arrow-back"></ion-icon>
         <p color="royal">Retour</p>
       </button>
     </ion-buttons>
-    <ion-title>Le nom </ion-title>
+    <ion-title>Item</ion-title>
     <ion-buttons end>
       <button ion-button icon-only color="royal">
         <ion-icon name="more"></ion-icon>
@@ -20,12 +20,9 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-thumbnail item-start>
         <img src="https://media0.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
-      </ion-thumbnail>
-      <h2>Titre de la collection</h2>
-      <p>Quelques mots sur la collection</p>
-      <button ion-button clear item-end (click)="openItem()">Voir</button>
+      <h2>Titre de l'item</h2>
+      <p>Quelques mots sur l'item, pour venter ses mérites</p>  
     </ion-item>
   </ion-list>
 </ion-content>
