@@ -13,6 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ItemPage } from '../pages/item/item';
 import { MoreSinglePage } from '../pages/moreSingle/moreSingle';
 import { MoreSingleMSPage } from '../pages/moreSingleMS/moreSingleMS';
+import { AjouterPage } from '../pages/ajouter/ajouter';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     ItemPage,
     MoreSinglePage,
-    MoreSingleMSPage
+    MoreSingleMSPage,
+    AjouterPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     ItemPage,
     MoreSinglePage,
-    MoreSingleMSPage
+    MoreSingleMSPage,
+    AjouterPage
   ],
   providers: [
     StatusBar,

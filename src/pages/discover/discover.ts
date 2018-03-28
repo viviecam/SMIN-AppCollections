@@ -2,11 +2,15 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 
+import { CollectionSinglePage } from '../../pages/collectionSingle/collectionSingle';
+
+
 @Component({
   selector: 'page-discover',
   templateUrl: 'discover.html'
 })
 export class DiscoverPage {
+
 
   constructor(public navCtrl: NavController, public httpClient: HttpClient) {  
 
@@ -15,6 +19,10 @@ export class DiscoverPage {
 	ionViewWillEnter(){
     	this.load();
  	}
+
+ 	openCollectionSingle(): void{
+	    this.navCtrl.push(CollectionSinglePage);
+	}
 
  	load(){
 	    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/?action=list&fonction=collections`);

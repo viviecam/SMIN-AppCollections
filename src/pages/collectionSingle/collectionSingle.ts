@@ -21,6 +21,7 @@ export class CollectionSinglePage {
 })
 export class CollectionSinglePage {
   
+
   	constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, private navParams: NavParams, public httpClient: HttpClient) {
   		this.id = navParams.get('id');
   	}
@@ -29,9 +30,9 @@ export class CollectionSinglePage {
     	this.load();
  	}
 
-  	retourMesColl(): void {
-    	this.navCtrl.pop();
-  	}
+  	retour() {
+    this.navCtrl.pop();
+  }
 
   	openItem(): void {
     	this.navCtrl.push(ItemPage)
@@ -52,4 +53,4 @@ export class CollectionSinglePage {
       		console.log(data)
     	})
  	}
-}
+

@@ -13,7 +13,7 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card   *ngFor="let item of datas">
+  <ion-card   *ngFor="let item of datas" (click)="openCollectionSingle()">
     <div class="bg-black">
       <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + item.image}}" />
     </div>
@@ -22,6 +22,8 @@
       <span>{{item.user_name}}</span>
     </div>
   </ion-card>
+
+
 
 
 </ion-content>
