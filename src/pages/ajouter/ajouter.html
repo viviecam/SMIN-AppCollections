@@ -1,0 +1,43 @@
+<!-- header -->
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button icon-only color="royal" (click)="retour()">
+                <ion-icon name="arrow-back"></ion-icon>
+                <p color="royal" showWhen="ios">Retour</p>
+            </button>
+        </ion-buttons>
+        <ion-title>Ajouter Collection</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal">
+                Enregistrer
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<!-- contenu -->
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary" floating>Nom de la collection</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" floating>Description</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" floating></ion-label>
+            <ion-input type="file"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" floating>ajoute un champs pour ajouter ses propres champs</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+
+    </ion-list>
+</ion-content>

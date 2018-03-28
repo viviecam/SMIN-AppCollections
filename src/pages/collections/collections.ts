@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 
 import { CollectionSinglePage } from '../../pages/collectionSingle/collectionSingle';
+import { AjouterPage } from '../../pages/ajouter/ajouter';
 
 @Component({
   selector: 'page-collections',
@@ -15,6 +16,10 @@ export class CollectionsPage {
 
   openCollectionSingle(): void{
     this.navCtrl.push(CollectionSinglePage);
+  }
+
+  ajouter(): void{
+    this.navCtrl.push(AjouterPage);
   }
 
 }
