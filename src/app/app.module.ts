@@ -41,7 +41,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      platforms: {
+        ios: {
+          backButtonText: 'Retour'
+        }
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

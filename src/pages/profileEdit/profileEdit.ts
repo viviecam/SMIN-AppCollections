@@ -7,8 +7,10 @@ import { NavController } from 'ionic-angular';
 })
 export class ProfileEditPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController) {  }
 
+  retourProfilePage() {
+    this.navCtrl.pop();
   }
 
 }

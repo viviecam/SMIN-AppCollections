@@ -6,14 +6,11 @@
       <button showWhen="ios" ion-button icon-only clear (click)="openProfileEdit()">
         <p color="primary">Modifier</p>
       </button>
-      <button showWhen="android" ion-button icon-only clear>
-        <ion-icon showWhen="android" name="more"></ion-icon>
-      </button>
       <button showWhen="android" ion-button icon-only clear (click)="more($event)">
-          <ion-icon  name="more" ></ion-icon>
-        </button>
+        <ion-icon name="more"></ion-icon>
+      </button>
     </ion-buttons>
-    
+
 
   </ion-navbar>
 </ion-header>
@@ -53,7 +50,7 @@
 
     <ion-item text-center class="logOutBtn">
       <ion-buttons>
-        <button ion-button color="danger" clear >
+        <button ion-button color="danger" clear>
           Se déconnecter
         </button>
       </ion-buttons>
