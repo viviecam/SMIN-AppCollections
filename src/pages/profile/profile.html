@@ -3,13 +3,14 @@
     <ion-title>Profil</ion-title>
 
     <ion-buttons end>
-      <button showWhen="ios" ion-button icon-only clear >
-        <p showWhen="ios" color="primary">Edit</p>
+      <button showWhen="ios" ion-button icon-only clear (click)="openProfileEdit()">
+        <p color="primary">Modifier</p>
       </button>
       <button showWhen="android" ion-button icon-only clear (click)="more($event)">
-          <ion-icon  name="more" ></ion-icon>
-        </button>
+        <ion-icon name="more"></ion-icon>
+      </button>
     </ion-buttons>
+
 
   </ion-navbar>
 </ion-header>
@@ -22,17 +23,17 @@
       <ion-avatar>
         <img src="../../assets/imgs/bb8.jpg">
       </ion-avatar>
-      <h1>pseudo</h1>
+      <h1>Totodu38</h1>
       <br>
     </ion-list-header>
 
     <ion-item>
       <ion-icon name="contact" item-start></ion-icon>
-      Prénom NOM
+      Toto SANSFAMILLE
     </ion-item>
     <ion-item>
       <ion-icon name="mail" item-start></ion-icon>
-      loremipsum@email.com
+      toto@sansfamille.com
     </ion-item>
     <ion-item>
       <ion-icon name="lock" item-start></ion-icon>
@@ -49,8 +50,8 @@
 
     <ion-item text-center class="logOutBtn">
       <ion-buttons>
-        <button ion-button color="danger" clear >
-          Se deconnecter
+        <button ion-button color="danger" clear>
+          Se déconnecter
         </button>
       </ion-buttons>
     </ion-item>

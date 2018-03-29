@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AjouterItemPage } from '../../pages/ajouterItem/ajouterItem';
-import { ModifierItemPage } from '../../pages/modifierItem/modifierItem';
+import { ProfileEditPage } from '../../pages/profileEdit/profileEdit';
 
 @Component({
   selector: 'page-more-profil',
@@ -16,7 +16,7 @@ export class MoreProfilPage {
     this.navCtrl.push(AjouterItemPage)
   }
 
-  modifierItem(){
-    this.navCtrl.push(ModifierItemPage)
+  openProfileEdit(): void{
+    this.navCtrl.push(ProfileEditPage);
   }
 }

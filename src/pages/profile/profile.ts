@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, PopoverController } from 'ionic-angular';
-
+import { ProfileEditPage } from '../profileEdit/profileEdit';
 import { MoreProfilPage } from '../../pages/moreProfil/moreProfil';
 
 @Component({
@@ -18,7 +18,8 @@ export class ProfilePage {
     });
   }
 
-  
-
+  openProfileEdit(): void{
+    this.navCtrl.push(ProfileEditPage);
+  }
 
 }
