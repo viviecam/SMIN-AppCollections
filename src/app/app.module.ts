@@ -16,6 +16,7 @@ import { MoreSingleMSPage } from '../pages/moreSingleMS/moreSingleMS';
 import { AjouterPage } from '../pages/ajouter/ajouter';
 import { AjouterItemPage } from '../pages/ajouterItem/ajouterItem';
 import { ModifierItemPage } from '../pages/modifierItem/modifierItem';
+import { ModifierCollectionPage } from '../pages/modifierCollection/modifierCollection';
 import { MoreProfilPage } from '../pages/moreProfil/moreProfil';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -37,7 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AjouterPage,
     AjouterItemPage,
     ModifierItemPage,
-    MoreProfilPage
+    MoreProfilPage,
+    ModifierCollectionPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AjouterPage,
     AjouterItemPage,
     ModifierItemPage,
-    MoreProfilPage
+    MoreProfilPage,
+    ModifierCollectionPage
+    
   ],
   providers: [
     StatusBar,
