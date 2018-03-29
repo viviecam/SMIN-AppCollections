@@ -1,28 +1,24 @@
 <!-- header -->
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons start left>
-            <button ion-button icon-only color="royal" (click)="retour()">
-                <ion-icon name="arrow-back"></ion-icon>
-                <p color="royal" showWhen="ios">Retour</p>
-            </button>
-        </ion-buttons>
+    <ion-navbar>
         <ion-title>Ajouter Collection</ion-title>
         <ion-buttons end>
             <button ion-button icon-only color="royal">
                 Enregistrer
             </button>
         </ion-buttons>
-    </ion-toolbar>
+    </ion-navbar>
 </ion-header>
 
 <!-- contenu -->
 <ion-content padding>
-    <ion-list>
+
         <ion-item>
-            <ion-label color="primary" floating>Nom de la collection</ion-label>
+            <ion-label color="primary" floating><h1>Nom de la collection</h1></ion-label>
             <ion-input></ion-input>
         </ion-item>
+        
+    <ion-list>
 
         <ion-item>
             <ion-label color="primary" floating>Description</ion-label>
