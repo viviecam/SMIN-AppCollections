@@ -2,6 +2,7 @@
   <ion-navbar>
 
     <ion-buttons end>
+      <!--Boutons pour valider les changements d'infos -->
       <button showWhen="ios" ion-button icon-only clear>
         <p color="primary" (click)="retourProfilePage()">OK</p>
       </button>
@@ -48,18 +49,23 @@
 
   <ion-list>
     <!-- <ion-item-divider color="light" text-uppercase>Modifier le mot de passe</ion-item-divider> -->
-    <ion-list-header color="light">Modifier le mot de passe</ion-list-header>
+    <ion-list-header color="light">Modifier le mot de passe
+      <ion-icon [name]="isActive ? 'eye' : 'eye-off'" item-right 
+      (click)="isActive = !isActive;" isActive=true>
+      </ion-icon>
+    </ion-list-header>
     <ion-item>
-      <ion-label color="primary" floating>Ancien mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-label color="primary" stacked>Ancien mot de passe</ion-label>
+      <ion-input [type]="getInputType()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Nouveau mot de passe</ion-label>
+      <ion-input [type]="getInputType()"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating>Nouveau mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" floating>Confirmer le nouveau mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-label color="primary" stacked>Confirmer le nouveau mot de passe</ion-label>
+      <ion-input [type]="getInputType()"></ion-input>
     </ion-item>
 
   </ion-list>

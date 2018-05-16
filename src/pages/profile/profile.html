@@ -29,19 +29,22 @@
 
     <ion-item>
       <ion-icon name="contact" item-start></ion-icon>
-      Toto SANSFAMILLE
+      <ion-input value="Toto SANSFAMILLE" disabled="true"></ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="mail" item-start></ion-icon>
-      toto@sansfamille.com
+      <ion-input value="toto@sansfamille.com" disabled="true"></ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="lock" item-start></ion-icon>
-      **********
+      <ion-input [type]="getType()" value="abcdefghij" disabled="true"></ion-input>
+      <ion-icon [name]="isActive ? 'eye-off' : 'eye'" item-right 
+      (click)="isActive = !isActive;" isActive=true>
+      </ion-icon>
     </ion-item>
     <ion-item>
       <ion-icon name="albums" item-start></ion-icon>
-      <span>10</span> collections
+      <ion-input value="10 collections" disabled="true"></ion-input>
     </ion-item>
 
   </ion-list>

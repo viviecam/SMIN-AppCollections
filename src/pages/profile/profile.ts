@@ -11,6 +11,14 @@ export class ProfilePage {
 
   constructor(public navCtrl: NavController, private popoverCtrl : PopoverController) {  }
 
+  /* Bouton afficher/masquer mot de passe */
+  type: string = "password";
+  isActive: Boolean = false;
+
+  getType() {
+    return this.isActive ? 'text' : 'password';
+  }
+
   more(myEvent) {
     let popover = this.popoverCtrl.create(MoreProfilPage);
     popover.present({

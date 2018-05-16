@@ -3,7 +3,7 @@ import { NavController, ActionSheetController, Platform } from 'ionic-angular';
 
 @Component({
   selector: 'page-profile-edit',
-  templateUrl: 'profileEdit.html'
+  templateUrl: 'profileEdit.html',
 })
 export class ProfileEditPage {
 
@@ -12,6 +12,14 @@ export class ProfileEditPage {
     public actionSheetCtrl: ActionSheetController,
     public platform: Platform
   ) { }
+
+  /* Bouton afficher/masquer mot de passe */
+  type: string = "text";
+  isActive: Boolean = false;
+
+  getInputType() {
+    return this.isActive ? 'password' : 'text';
+  }
 
   /* Retour à la page du profil */
   retourProfilePage() {
