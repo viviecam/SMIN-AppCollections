@@ -19,11 +19,11 @@
 <!-- contenu -->
 <ion-content padding>
   <ion-list>
-    <ion-item (click)="openItem()">
+    <ion-item *ngFor="let item of datas" (click)="openItem()">
       <ion-thumbnail item-start>
-        <img src="https://media0.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+        <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + item.item_image}}">
       </ion-thumbnail>
-      <h2></h2>
+      <h2>{{item_titile}}</h2>
       <p>Quelques mots sur la collection</p>
       <button ion-button clear item-end >
           <ion-icon name="ios-arrow-forward" item-end></ion-icon>

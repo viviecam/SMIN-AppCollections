@@ -50,7 +50,7 @@ export class CollectionSinglePage {
 	    console.log(this.items)
 	    this.items
 	    .subscribe(data => {
-      		console.log(data)
+      		this.datas = data.collections[0].items
     	})
  	}
-
+}
