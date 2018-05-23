@@ -1,5 +1,8 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, PopoverController, NavParams } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { AjouterItemPage } from '../../pages/ajouterItem/ajouterItem';
+import { ModifierItemPage } from '../../pages/modifierItem/modifierItem';
+import { ModifierCollectionPage } from '../../pages/modifierCollection/modifierCollection';
 
 @Component({
   selector: 'page-more-single',
@@ -10,5 +13,11 @@ export class MoreSinglePage {
 
   constructor(public navCtrl: NavController) { }
 
-  
+  ajouterItem(){
+    this.navCtrl.push(AjouterItemPage)
+  }
+
+  modifierCollection(){
+    this.navCtrl.push(ModifierCollectionPage)
+  }
 }

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-buttons end>
+      <!--Boutons pour valider les changements d'infos -->
+      <button showWhen="ios" ion-button icon-only clear>
+        <p color="primary" (click)="retourProfilePage()">OK</p>
+      </button>
+      <!-- <button showWhen="android" ion-button icon-only clear>
+        <ion-icon name="more"></ion-icon>
+      </button> -->
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-list-header text-center>
+      <ion-avatar>
+        <img src="../../assets/imgs/bb8.jpg">
+      </ion-avatar>
+      <button (click)="showActionSheetChangeAvatar()" ion-button clear>Modifier</button>
+      <br>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Pseudo</ion-label>
+      <ion-input type="text" placeholder="Totodu38"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Prénom</ion-label>
+      <ion-input type="text" placeholder="Toto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Nom</ion-label>
+      <ion-input type="text" placeholder="sansfamille"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>E-mail</ion-label>
+      <ion-input type="email" placeholder="toto@sansfamille.com"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <!-- <ion-item-divider color="light" text-uppercase>Modifier le mot de passe</ion-item-divider> -->
+    <ion-list-header color="light">Modifier le mot de passe
+      <ion-icon [name]="isActive ? 'eye' : 'eye-off'" item-right 
+      (click)="isActive = !isActive;" isActive=true>
+      </ion-icon>
+    </ion-list-header>
+    <ion-item>
+      <ion-label color="primary" stacked>Ancien mot de passe</ion-label>
+      <ion-input [type]="getInputType()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Nouveau mot de passe</ion-label>
+      <ion-input [type]="getInputType()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Confirmer le nouveau mot de passe</ion-label>
+      <ion-input [type]="getInputType()"></ion-input>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

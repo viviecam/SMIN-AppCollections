@@ -3,11 +3,14 @@
     <ion-title>Profil</ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only clear>
-        <ion-icon showWhen="android" name="more"></ion-icon>
-        <p showWhen="ios" color="primary">Edit</p>
+      <button showWhen="ios" ion-button icon-only clear (click)="openProfileEdit()">
+        <p color="primary">Modifier</p>
+      </button>
+      <button showWhen="android" ion-button icon-only clear (click)="more($event)">
+        <ion-icon name="more"></ion-icon>
       </button>
     </ion-buttons>
+
 
   </ion-navbar>
 </ion-header>
@@ -16,44 +19,45 @@
 
   <ion-list>
 
-    <ion-item-divider text-center>
+    <ion-list-header text-center>
       <ion-avatar>
         <img src="../../assets/imgs/bb8.jpg">
       </ion-avatar>
-      <h1>username</h1>
+      <h1>Totodu38</h1>
       <br>
-    </ion-item-divider>
+    </ion-list-header>
 
-    <ion-item-group>
-      <ion-item>
-        <ion-icon name="contact" item-start></ion-icon>
-        Firstname LASTNAME
-      </ion-item>
-      <ion-item>
-        <ion-icon name="mail" item-start></ion-icon>
-        loremipsum@email.com
-      </ion-item>
-      <ion-item>
-        <ion-icon name="lock" item-start></ion-icon>
-        **********
-      </ion-item>
-      <ion-item>
-        <ion-icon name="albums" item-start></ion-icon>
-        <span>10</span> collections
-      </ion-item>
-    </ion-item-group>
+    <ion-item>
+      <ion-icon name="contact" item-start></ion-icon>
+      <ion-input value="Toto SANSFAMILLE" disabled="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail" item-start></ion-icon>
+      <ion-input value="toto@sansfamille.com" disabled="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" item-start></ion-icon>
+      <ion-input [type]="getType()" value="abcdefghij" disabled="true"></ion-input>
+      <ion-icon [name]="isActive ? 'eye-off' : 'eye'" item-right 
+      (click)="isActive = !isActive;" isActive=true>
+      </ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="albums" item-start></ion-icon>
+      <ion-input value="10 collections" disabled="true"></ion-input>
+    </ion-item>
 
-    <ion-item-divider></ion-item-divider>
+  </ion-list>
 
-    <ion-item-group>
-      <ion-item text-center>
-        <ion-buttons>
-          <button ion-button color="danger" clear>
-            Log out
-          </button>
-        </ion-buttons>
-      </ion-item>
-    </ion-item-group>
+  <ion-list showWhen="ios">
+
+    <ion-item text-center class="logOutBtn">
+      <ion-buttons>
+        <button ion-button color="danger" clear>
+          Se déconnecter
+        </button>
+      </ion-buttons>
+    </ion-item>
 
   </ion-list>
 

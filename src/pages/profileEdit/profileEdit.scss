@@ -1,25 +1,20 @@
 /* iOS */
 
-.platform-ios page-profile {
+.platform-ios page-profile-edit {
     ion-content {
         background-color: #f7f7f7;
-
-
-        .logOutBtn ion-label {
-            margin: 0;
-        }
 
     }
 
 }
 
 /* Android */
-.platform-android page-profile {
+.platform-android page-profile-edit {
 
 }
 
 /* Commun */
-page-profile {
+page-profile-edit {
 
     ion-avatar > img {        
         margin-left: auto;
@@ -29,12 +24,5 @@ page-profile {
         max-width: 100px !important;
         max-height: 100px !important; 
     }
-    
-    ion-list-header h1 {
-        margin-top: 10px !important;
-    }
 
-    .text-input[disabled] {
-        opacity: 1;
-    }
 }
