@@ -29,10 +29,11 @@ export class CollectionsPage {
  	}
 
  	load(){
-    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/?action=list&fonction=collections&idUser=${1}`);
+    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/collections/user/1`);
     console.log(this.collections)
     this.collections
     .subscribe(data => {
+      console.log(data)
       this.datas = data
     })
  	}

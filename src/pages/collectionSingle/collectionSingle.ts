@@ -46,10 +46,10 @@ export class CollectionSinglePage {
   	}
 
   	load(){
-	    this.items = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/?action=list&fonction=datas&id=${this.id}`);
-	    console.log(this.items)
+	    this.items = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/datas/id/${this.id}`);
 	    this.items
 	    .subscribe(data => {
+          console.log(data)
       		this.datas = data.collections[0].items
     	})
  	}

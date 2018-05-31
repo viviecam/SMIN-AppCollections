@@ -25,7 +25,7 @@ export class DiscoverPage {
 	}
 
  	load(){
-	    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/?action=list&fonction=collections`);
+	    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/collections`);
 	    console.log(this.collections)
 	    this.collections
 	    .subscribe(data => {
