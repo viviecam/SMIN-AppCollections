@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { NavController, PopoverController } from 'ionic-angular';
 import { ProfileEditPage } from '../profileEdit/profileEdit';
 import { MoreProfilPage } from '../../pages/moreProfil/moreProfil';
+<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
+=======
+import { LoginPage } from '../../pages/login/login';
+>>>>>>> 6272a0730fdcea3b382431713e716f98fc92f367
 
 @Component({
   selector: 'page-profile',
@@ -45,6 +49,9 @@ export class ProfilePage {
       console.log(data)
       this.datas = data
     })
+  
+  openLoginPage(): void{
+    this.navCtrl.push(LoginPage);
   }
 
 }
