@@ -1,0 +1,32 @@
+page-login ion-content {
+    background-image: url(../../assets/imgs/collections.png);
+    background-color: transparent;
+
+    h3, h6 {
+        color: white;
+        margin-top: 45px !important;
+    }
+
+    form {
+        margin-top: 30px !important;
+        
+        .item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .item:nth-child(2) {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        ion-input {
+            font-size: 13px;
+        }
+
+        button {
+            background-color: #fb9692 !important;
+        }
+        
+    }
+}

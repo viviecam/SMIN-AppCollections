@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, PopoverController, NavParams } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 import { ModifierItemPage } from '../../pages/modifierItem/modifierItem';
 

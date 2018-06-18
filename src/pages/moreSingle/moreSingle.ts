@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AjouterItemPage } from '../../pages/ajouterItem/ajouterItem';
-import { ModifierItemPage } from '../../pages/modifierItem/modifierItem';
 import { ModifierCollectionPage } from '../../pages/modifierCollection/modifierCollection';
 
 @Component({

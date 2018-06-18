@@ -1,45 +1,50 @@
-import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { CollectionsPage } from '../pages/collections/collections';
-import { CollectionSinglePage } from '../pages/collectionSingle/collectionSingle';
-import { SearchPage } from '../pages/search/search';
-import { DiscoverPage } from '../pages/discover/discover';
-import { ProfilePage } from '../pages/profile/profile';
-import { ProfileEditPage } from '../pages/profileEdit/profileEdit';
-import { TabsPage } from '../pages/tabs/tabs';
-import { ItemPage } from '../pages/item/item';
-import { MoreSinglePage } from '../pages/moreSingle/moreSingle';
-import { MoreSingleMSPage } from '../pages/moreSingleMS/moreSingleMS';
-import { AjouterPage } from '../pages/ajouter/ajouter';
-import { AjouterItemPage } from '../pages/ajouterItem/ajouterItem';
-import { ModifierItemPage } from '../pages/modifierItem/modifierItem';
-import { ModifierCollectionPage } from '../pages/modifierCollection/modifierCollection';
-import { MoreProfilPage } from '../pages/moreProfil/moreProfil';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { AjouterPage } from '../pages/ajouter/ajouter';
+import { AjouterItemPage } from '../pages/ajouterItem/ajouterItem';
+import { CollectionsPage } from '../pages/collections/collections';
+import { CollectionSinglePage } from '../pages/collectionSingle/collectionSingle';
+import { DiscoverPage } from '../pages/discover/discover';
+import { ItemPage } from '../pages/item/item';
+import { LoginPage } from '../pages/login/login';
+import { ModifierCollectionPage } from '../pages/modifierCollection/modifierCollection';
+import { ModifierItemPage } from '../pages/modifierItem/modifierItem';
+import { MoreProfilPage } from '../pages/moreProfil/moreProfil';
+import { MoreSinglePage } from '../pages/moreSingle/moreSingle';
+import { MoreSingleMSPage } from '../pages/moreSingleMS/moreSingleMS';
+import { ProfilePage } from '../pages/profile/profile';
+import { ProfileEditPage } from '../pages/profileEdit/profileEdit';
+import { SearchPage } from '../pages/search/search';
+import { SignUpPage } from '../pages/signup/signup';
+import { TabsPage } from '../pages/tabs/tabs';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    CollectionsPage,
-    CollectionSinglePage,
-    SearchPage,
-    DiscoverPage,
-    ProfilePage,
-    ProfileEditPage,
-    TabsPage,
-    ItemPage,
-    MoreSinglePage,
-    MoreSingleMSPage,
     AjouterPage,
     AjouterItemPage,
+    CollectionsPage,
+    CollectionSinglePage,
+    DiscoverPage,
+    ItemPage,
+    LoginPage,
+    ModifierCollectionPage,
     ModifierItemPage,
     MoreProfilPage,
-    ModifierCollectionPage
+    MoreSinglePage,
+    MoreSingleMSPage,
+    ProfilePage,
+    ProfileEditPage,
+    SearchPage,
+    SignUpPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -54,22 +59,23 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    CollectionsPage,
-    CollectionSinglePage,
-    SearchPage,
-    DiscoverPage,
-    ProfilePage,
-    ProfileEditPage,
-    TabsPage,
-    ItemPage,
-    MoreSinglePage,
-    MoreSingleMSPage,
     AjouterPage,
     AjouterItemPage,
+    CollectionsPage,
+    CollectionSinglePage,
+    DiscoverPage,
+    ItemPage,
+    LoginPage,
+    ModifierCollectionPage,
     ModifierItemPage,
     MoreProfilPage,
-    ModifierCollectionPage
-    
+    MoreSinglePage,
+    MoreSingleMSPage,
+    ProfilePage,
+    ProfileEditPage,
+    SearchPage,
+    SignUpPage,
+    TabsPage    
   ],
   providers: [
     StatusBar,

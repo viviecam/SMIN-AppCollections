@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, PopoverController } from 'ionic-angular';
 import { ProfileEditPage } from '../profileEdit/profileEdit';
 import { MoreProfilPage } from '../../pages/moreProfil/moreProfil';
+import { LoginPage } from '../../pages/login/login';
 
 @Component({
   selector: 'page-profile',
@@ -9,7 +10,9 @@ import { MoreProfilPage } from '../../pages/moreProfil/moreProfil';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, private popoverCtrl : PopoverController) {  }
+  constructor(
+    public navCtrl: NavController, 
+    private popoverCtrl : PopoverController) {  }
 
   /* Bouton afficher/masquer mot de passe */
   type: string = "password";
@@ -28,6 +31,10 @@ export class ProfilePage {
 
   openProfileEdit(): void{
     this.navCtrl.push(ProfileEditPage);
+  }
+
+  openLoginPage(): void{
+    this.navCtrl.push(LoginPage);
   }
 
 }
