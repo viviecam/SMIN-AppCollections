@@ -19,8 +19,11 @@
 
   <h6 margin text-center>Pas encore de compte?
     <br/>
-    <!-- <a (click)="openSignUpPage()">Inscrivez-vous</a> -->
-    <a [navPush]="SignUpPage" >Inscrivez-vous</a>
+    <ion-buttons>
+      <button ion-button clear (click)="openSignUpPage()">
+        Inscrivez-vous
+      </button>
+    </ion-buttons>
   </h6>
 
 </ion-content>

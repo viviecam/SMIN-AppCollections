@@ -25,4 +25,5 @@ export class LoginPage {
   openSignUpPage(): void{
     this.navCtrl.push(SignUpPage);
   }
+  
 }

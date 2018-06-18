@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../../pages/login/login';
 
 
 @Component({
@@ -21,5 +22,8 @@ export class SignUpPage {
     return this.isActive ? 'text' : 'password';
   }
 
+  openLoginPage(): void{
+    this.navCtrl.push(LoginPage);
+  }
   
 }
