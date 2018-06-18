@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { NavController, PopoverController} from 'ionic-angular';
+import { NavController, PopoverController, NavParams} from 'ionic-angular';
 
 import { MoreSingleMSPage } from '../../pages/moreSingleMS/moreSingleMS';
 
@@ -10,7 +10,16 @@ import { MoreSingleMSPage } from '../../pages/moreSingleMS/moreSingleMS';
 })
 export class ItemPage {
 
-  constructor(public navCtrl: NavController, private popoverCtrl: PopoverController) { }
+  infos:any;
+  title:string;
+  image:any;
+  datas:any;
+  constructor(public navCtrl: NavController, private popoverCtrl: PopoverController,  private navParams: NavParams) { 
+    this.infos = navParams.get('infos');
+    this.title = navParams.get('title');
+    this.image = navParams.get('image');
+    this.datas = this.infos
+  }
 
   retour(){
     this.navCtrl.pop();

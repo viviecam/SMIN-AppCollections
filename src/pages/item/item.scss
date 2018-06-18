@@ -3,6 +3,21 @@ page-item {
     //     align-self: flex-end;
     // }
     
+    h2 {
+    	font-size: 20px !important;
+    }
 
+    h3 {
+    	display: inline-block;
+    	margin-top: 0  !important;
+    	font-weight: bold !important;
+    	width: 70%;
+    	overflow: auto;
+    }
+    p {
+    	display: inline-block;
+    	margin-top: 10px !important;
+    	width: 30%;
+    }
 }
 

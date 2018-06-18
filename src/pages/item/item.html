@@ -14,9 +14,14 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-        <img src="https://media0.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
-      <h2>Titre de l'item</h2>
-      <p>Quelques mots sur l'item, pour venter ses mérites</p>  
+      <h2>{{title}}</h2>
+      <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + image}}">
+      <ion-list *ngFor="let item of datas">
+        <ion-item>
+          <h3>{{item.title}}</h3>
+          <p>{{item.data}}</p>
+        </ion-item>
+      </ion-list>
     </ion-item>
   </ion-list>
 </ion-content>

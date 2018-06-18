@@ -12,14 +12,15 @@ import { AjouterPage } from '../../pages/ajouter/ajouter';
 })
 export class CollectionsPage {
 
-
+  collections:any;
+  datas:any;
 
   constructor(public navCtrl: NavController, public httpClient: HttpClient) {  
   }
 
   openCollectionSingle(id): void{
     this.navCtrl.push(CollectionSinglePage, {
-      id: id
+      id: id,
     });
   }
 

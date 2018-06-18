@@ -13,7 +13,7 @@
 <!-- contenu -->
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let item of datas" (click)="openItem()">
+    <ion-item *ngFor="let item of datas" (click)="openItem(item.caracteristiques, item.item_name, item.item_image)">
       <ion-thumbnail item-start>
         <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + item.item_image}}">
       </ion-thumbnail>

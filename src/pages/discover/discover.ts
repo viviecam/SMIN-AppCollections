@@ -11,6 +11,9 @@ import { CollectionSinglePage } from '../../pages/collectionSingle/collectionSin
 })
 export class DiscoverPage {
 
+	collections:any;
+	datas:any;
+
 
   constructor(public navCtrl: NavController, public httpClient: HttpClient) {  
 

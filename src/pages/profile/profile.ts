@@ -10,6 +10,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfilePage {
 
+  myProfil:any;
+  datas:any;
+
   constructor(public navCtrl: NavController, private popoverCtrl : PopoverController, public httpClient: HttpClient) {  }
 
   /* Bouton afficher/masquer mot de passe */

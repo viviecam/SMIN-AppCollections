@@ -1,4 +1,22 @@
 page-ajouter {
-
+	button {
+		background-color: blue;
+		color: #fff;
+		padding: 10px;
+		border-radius: 5px;
+		float: right;
+	}
+	.addedCarac {
+		margin: 0;
+	}
+	.addedCarac .item-inner {
+		border: none !important;
+	}
+	.addedCarac {
+	}
+	ion-icon {
+		color: #ccc;
+		font-size: 10px;
+	}
 }
 

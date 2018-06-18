@@ -21,6 +21,9 @@ export class CollectionSinglePage {
 })
 export class CollectionSinglePage {
   
+  id:number;
+  items:any;
+  datas:any;
 
   	constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, private navParams: NavParams, public httpClient: HttpClient) {
   		this.id = navParams.get('id');
@@ -34,8 +37,12 @@ export class CollectionSinglePage {
     this.navCtrl.pop();
   }
 
-  	openItem(): void {
-    	this.navCtrl.push(ItemPage)
+  	openItem(infos, title, image): void {
+    	this.navCtrl.push(ItemPage, {
+        infos: infos,
+        title: title,
+        image: image
+      });
   	}
 
   	more(myEvent) {
@@ -49,7 +56,8 @@ export class CollectionSinglePage {
 	    this.items = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/datas/id/${this.id}`);
 	    this.items
 	    .subscribe(data => {
-          console.log(data)
+          console.log(data.collections[0].items[0])
+          console.log(data.collections[0].items[1].caracteristiques)
       		this.datas = data.collections[0].items
     	})
  	}
