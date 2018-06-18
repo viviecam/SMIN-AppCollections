@@ -17,23 +17,23 @@
 
 <ion-content>
 
-  <ion-list>
+  <ion-list *ngFor="let item of datas">
 
     <ion-list-header text-center>
       <ion-avatar>
         <img src="../../assets/imgs/bb8.jpg">
       </ion-avatar>
-      <h1>Totodu38</h1>
+      <h1>{{item.pseudo}}</h1>
       <br>
     </ion-list-header>
 
     <ion-item>
       <ion-icon name="contact" item-start></ion-icon>
-      <ion-input value="Toto SANSFAMILLE" disabled="true"></ion-input>
+      <ion-input value="{{item.firstname}}" disabled="true"></ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="mail" item-start></ion-icon>
-      <ion-input value="toto@sansfamille.com" disabled="true"></ion-input>
+      <ion-input value="{{item.email}}" disabled="true"></ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="lock" item-start></ion-icon>

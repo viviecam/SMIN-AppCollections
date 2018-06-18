@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, PopoverController } from 'ionic-angular';
 import { ProfileEditPage } from '../profileEdit/profileEdit';
 import { MoreProfilPage } from '../../pages/moreProfil/moreProfil';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-profile',
@@ -9,7 +10,7 @@ import { MoreProfilPage } from '../../pages/moreProfil/moreProfil';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, private popoverCtrl : PopoverController) {  }
+  constructor(public navCtrl: NavController, private popoverCtrl : PopoverController, public httpClient: HttpClient) {  }
 
   /* Bouton afficher/masquer mot de passe */
   type: string = "password";
@@ -28,6 +29,19 @@ export class ProfilePage {
 
   openProfileEdit(): void{
     this.navCtrl.push(ProfileEditPage);
+  }
+
+  ionViewWillEnter(){
+      this.load();
+  }
+
+  load(){
+    this.myProfil = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/users/id/1`);
+    this.myProfil
+    .subscribe(data => {
+      console.log(data)
+      this.datas = data
+    })
   }
 
 }
