@@ -1,5 +1,5 @@
 <!-- header -->
-<ion-header>
+<!--<ion-header>
   <ion-navbar>
     <ion-title>{{title}}</ion-title>
     <ion-buttons end>
@@ -8,10 +8,10 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-</ion-header>
+</ion-header>-->
 
 <!-- contenu -->
-<ion-content padding>
+<!--<ion-content padding>
   <ion-list>
     <ion-item>
       <h2>{{title}}</h2>
@@ -24,4 +24,39 @@
       </ion-list>
     </ion-item>
   </ion-list>
-</ion-content>
+</ion-content>-->
+
+<!-- header -->
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{title}}</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal" (click)="more($event)">
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header> 
+  
+  <!-- contenu -->
+  <ion-content>
+      <ion-list-header text-center>
+        <br>
+        <h1>{{title}}</h1>
+        <br>
+      </ion-list-header>
+    <ion-list>
+      <ion-item>
+        <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + image}}">
+      </ion-item>
+    </ion-list>
+    <ion-list *ngFor="let item of datas">
+      <ion-item>
+          <h3>{{item.title}}</h3>
+          <p>{{item.data}}</p>
+        </ion-item>
+    </ion-list>
+      
+  </ion-content> 
+
+  
