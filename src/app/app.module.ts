@@ -31,6 +31,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
+    LoginPage,
     MyApp,
     AjouterPage,
     AjouterItemPage,
@@ -38,7 +39,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     CollectionSinglePage,
     DiscoverPage,
     ItemPage,
-    LoginPage,
     ModifierCollectionPage,
     ModifierItemPage,
     MoreProfilPage,
@@ -63,6 +63,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    LoginPage,
     MyApp,
     AjouterPage,
     AjouterItemPage,
@@ -70,7 +71,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     CollectionSinglePage,
     DiscoverPage,
     ItemPage,
-    LoginPage,
     ModifierCollectionPage,
     ModifierItemPage,
     MoreProfilPage,

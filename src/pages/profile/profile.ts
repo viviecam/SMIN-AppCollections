@@ -35,6 +35,10 @@ export class ProfilePage {
     this.navCtrl.push(ProfileEditPage);
   }
 
+  openLoginPage(){
+    this.navCtrl.push(LoginPage);
+  }
+
   ionViewWillEnter(){
       this.load();
   }
@@ -47,9 +51,4 @@ export class ProfilePage {
       this.datas = data
     })
   }
-  
-  openLoginPage(): void{
-    this.navCtrl.push(LoginPage);
-  }
-
 }

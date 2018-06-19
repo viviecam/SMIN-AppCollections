@@ -18,7 +18,7 @@
     <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + item.image}}" />
     <!-- Pour aller chercher les images -->
     <!-- <img src="../../assets/imgs/logo.png" /> -->
-    <ion-card-content (click)="openCollectionSingle(item.id)">
+    <ion-card-content (click)="openCollectionSingle(item.id, item.title)">
       <ion-card-title>
         {{item.title}}
       </ion-card-title>

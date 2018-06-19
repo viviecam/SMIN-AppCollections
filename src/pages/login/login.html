@@ -12,7 +12,7 @@
       <ion-icon [name]="isActive ? 'eye-off' : 'eye'" item-right (click)="isActive = !isActive;" isActive=true>
       </ion-icon>
     </ion-item>
-    <button ion-button type="submit" block>Se connecter</button>
+    <button ion-button type="submit" block (click)="connect()">Se connecter</button>
   </form>
 
   <p margin text-center><a>Mot de passe oublié</a></p>
