@@ -36,14 +36,14 @@ export class ProfileEditPage {
           text: 'Prendre une photo',
           icon: !this.platform.is('ios') ? 'image' : null,
           handler: () => {
-            console.log('Take a photo clicked');
+            // console.log('Take a photo clicked');
           }
         },
         {
           text: 'Choisir une photo',
           icon: !this.platform.is('ios') ? 'images' : null,
           handler: () => {
-            console.log('Choose a photo clicked');
+            // console.log('Choose a photo clicked');
 
           }
         }, {
@@ -51,14 +51,14 @@ export class ProfileEditPage {
           role: 'destructive',
           icon: !this.platform.is('ios') ? 'trash' : null,
           handler: () => {
-            console.log('Delete avatar clicked');
+            // console.log('Delete avatar clicked');
           }
         }, {
-          text: 'Cancel',
+          text: 'Annuler',
           role: 'cancel',
           icon: !this.platform.is('ios') ? 'close' : null,
           handler: () => {
-            console.log('Cancel clicked');
+            // console.log('Cancel clicked');
           }
         }
       ]

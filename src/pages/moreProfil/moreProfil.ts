@@ -12,10 +12,6 @@ export class MoreProfilPage {
 
   constructor(public navCtrl: NavController) { }
 
-  ajouterItem(){
-    this.navCtrl.push(AjouterItemPage)
-  }
-
   openProfileEdit(): void{
     this.navCtrl.push(ProfileEditPage);
   }
