@@ -24,9 +24,11 @@ export class CollectionSinglePage {
   id:number;
   items:any;
   datas:any;
+  name:string;
 
   	constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, private navParams: NavParams, public httpClient: HttpClient) {
   		this.id = navParams.get('id');
+      this.name = navParams.get('name');
   	}
 
   	ionViewWillEnter(){

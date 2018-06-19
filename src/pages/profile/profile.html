@@ -29,7 +29,7 @@
 
     <ion-item>
       <ion-icon name="contact" item-start></ion-icon>
-      <ion-input value="{{item.firstname}}" disabled="true"></ion-input>
+      <ion-input value="{{item.firstname}} {{item.name}}" disabled="true"></ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="mail" item-start></ion-icon>
@@ -37,14 +37,11 @@
     </ion-item>
     <ion-item>
       <ion-icon name="lock" item-start></ion-icon>
-      <ion-input [type]="getType()" value="abcdefghij" disabled="true"></ion-input>
-      <ion-icon [name]="isActive ? 'eye-off' : 'eye'" item-right 
-      (click)="isActive = !isActive;" isActive=true>
-      </ion-icon>
+      <ion-input [type]="getType()" value="{{item.password}}" disabled="true"></ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="albums" item-start></ion-icon>
-      <ion-input value="10 collections" disabled="true"></ion-input>
+      <ion-input value="{{item.nombre_collection}} collections" disabled="true"></ion-input>
     </ion-item>
 
   </ion-list>
