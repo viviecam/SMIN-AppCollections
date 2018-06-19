@@ -1,16 +1,31 @@
 <!-- Header -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Recherche</ion-title>
+    <ion-title>Rechercher</ion-title>
   </ion-navbar>
 </ion-header>
 
 <!-- contenu -->
-<ion-content padding>
+<ion-content>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <!-- {{ item }} -->
+    <!-- <ion-item *ngFor="let item of items"> -->
+    <ion-item>      
+      <ion-card>
+
+        <img src="../../assets/imgs/collections.png">
+      
+        <ion-item>
+          <h2>Nom de la collection</h2>
+          <p>Pseudo de l'auteur</p>
+        </ion-item>
+      
+        <ion-item>
+          <span item-start>Nombre d'items</span>          
+          <button ion-button clear float-right>Visualiser</button>
+        </ion-item>
+      
+      </ion-card>
     </ion-item>
   </ion-list>
 </ion-content>
