@@ -14,7 +14,8 @@
 
 <!-- contenu -->
 <ion-content padding>
-  <ion-card  *ngFor="let item of datas">
+  <p *ngIf="datas == null">Vous n'avez aucune collection</p>
+  <ion-card *ngFor="let item of datas">
     <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + item.image}}" />
     <!-- Pour aller chercher les images -->
     <!-- <img src="../../assets/imgs/logo.png" /> -->
@@ -25,7 +26,7 @@
       <p>
         {{item.description}}
       </p>
-      <button ion-button clear float-right  >Visualiser</button>
+      <button ion-button clear float-right>Visualiser</button>
     </ion-card-content>
   </ion-card>
 </ion-content>

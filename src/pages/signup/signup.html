@@ -3,7 +3,16 @@
 
   <form margin>
     <ion-item>
-      <ion-input type="email" placeholder="E-mail"></ion-input>
+      <ion-input [(ngModel)]="nom" name="nom" type="text" placeholder="Nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="prenom" name="prenom" type="text" placeholder="Prénom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="pseudo" name="pseudo" type="text" placeholder="Pseudo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="E-mail"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -20,7 +29,7 @@
       </ion-icon>
     </ion-item>
     
-    <button ion-button type="submit" block>S'inscrire</button>
+    <button ion-button type="submit" block (click)="signup()">S'inscrire</button>
   </form>
 
   <h6 margin text-center>Déjà inscrit?

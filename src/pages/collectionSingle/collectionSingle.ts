@@ -25,10 +25,12 @@ export class CollectionSinglePage {
   items:any;
   datas:any;
   name:string;
+  from:string;
 
   	constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, private navParams: NavParams, public httpClient: HttpClient) {
   		this.id = navParams.get('id');
       this.name = navParams.get('name');
+      this.from = navParams.get('from');
   	}
 
   	ionViewWillEnter(){
@@ -43,7 +45,8 @@ export class CollectionSinglePage {
     	this.navCtrl.push(ItemPage, {
         infos: infos,
         title: title,
-        image: image
+        image: image,
+        from: this.from,
       });
   	}
 
@@ -58,9 +61,8 @@ export class CollectionSinglePage {
 	    this.items = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/datas/id/${this.id}`);
 	    this.items
 	    .subscribe(data => {
-          console.log(data.collections[0].items[0])
-          console.log(data.collections[0].items[1].caracteristiques)
       		this.datas = data.collections[0].items
+          console.log(data)
     	})
  	}
 }

@@ -3,12 +3,18 @@ import { NavController, NavParams } from 'ionic-angular';
 import { SignUpPage } from '../../pages/signup/signup';
 import { HttpClient } from '@angular/common/http';
 
+import { TabsPage } from '../../pages/tabs/tabs';
+
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
+  email: string = "";
+  password: string = "";
+  connexion: any;
 
   constructor(
     public navCtrl: NavController, 
@@ -25,14 +31,21 @@ export class LoginPage {
   }
 
   connect(){
-/*    this.connexion = this.httpClient.post('https://collectionback-bricebricebricemmi.c9users.io/connexion', 
+    this.connexion = this.httpClient.post('https://collectionback-bricebricebricemmi.c9users.io/connexion', 
     { 
-      password: 
+      email: this.email,
+      password: this.password
     })
     this.connexion
     .subscribe(data => {
       console.log(data)
-    })*/
+      if (data !== "null"){
+        this.navCtrl.push(TabsPage, {
+          id: data.id,
+          token: data.token,
+        });
+      }
+    })
   }
 
   openSignUpPage(): void{

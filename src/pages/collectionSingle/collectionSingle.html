@@ -2,7 +2,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>{{name}}</ion-title>
-    <ion-buttons end>
+    <ion-buttons *ngIf="from !== 'discover'" end>
       <button ion-button icon-only color="royal" (click)="more($event)">
         <ion-icon name="more"></ion-icon>
       </button>
@@ -18,7 +18,6 @@
         <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + item.item_image}}">
       </ion-thumbnail>
       <h2>{{item.item_name}}</h2>
-      <p>Quelques mots sur la collection</p>
       <button ion-button clear item-end>
         <ion-icon name="ios-arrow-forward" item-end></ion-icon>
       </button>

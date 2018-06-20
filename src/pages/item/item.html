@@ -2,7 +2,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>{{title}}</ion-title>
-    <ion-buttons end>
+    <ion-buttons *ngIf="from !== 'discover'" end>
       <button ion-button icon-only color="royal" (click)="more($event)">
         <ion-icon name="more"></ion-icon>
       </button>

@@ -23,8 +23,8 @@ export class AjouterPage {
 	  	private transfer: FileTransfer,
 	  	private camera: Camera,
 	  	public loadingCtrl: LoadingController,
-	 	public toastCtrl: ToastController) {
-  			this.currentCarac = []
+      public toastCtrl: ToastController) {
+  		this.currentCarac = []
 		}
 
   addCaract(){

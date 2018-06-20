@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -14,8 +14,11 @@ export class CollectionsPage {
 
   collections:any;
   datas:any;
+  id:number;
 
-  constructor(public navCtrl: NavController, public httpClient: HttpClient) {  
+  constructor(public navCtrl: NavController, public httpClient: HttpClient, private navParams: NavParams) {  
+    this.id = navParams.data;
+    console.log(navParams.data)
   }
 
   openCollectionSingle(id, name): void{
@@ -23,6 +26,7 @@ export class CollectionsPage {
     this.navCtrl.push(CollectionSinglePage, {
       id: id,
       name: name,
+      from: 'collections'
     });
   }
 
@@ -32,7 +36,7 @@ export class CollectionsPage {
  	}
 
  	load(){
-    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/collections/user/1`);
+    this.collections = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/collections/user/` + this.id);
     console.log(this.collections)
     this.collections
     .subscribe(data => {
