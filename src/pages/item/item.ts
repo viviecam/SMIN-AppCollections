@@ -14,6 +14,7 @@ export class ItemPage {
   title:string;
   image:any;
   datas:any;
+  from:any;
 
   constructor(public navCtrl: NavController, private popoverCtrl: PopoverController,  private navParams: NavParams) { 
     this.infos = navParams.get('infos');

@@ -16,14 +16,14 @@
     </ion-item>
 
     <ion-item>
-      <ion-input [type]="getInputType()" placeholder="Mot de passe"></ion-input>
+      <ion-input [(ngModel)]="password1" name="password1" [type]="getInputType()" placeholder="Mot de passe"></ion-input>
       <!-- <ion-input></ion-input> -->
       <ion-icon [name]="isActive ? 'eye-off' : 'eye'" item-right (click)="isActive = !isActive;" isActive=true>
       </ion-icon>
     </ion-item>
 
     <ion-item>
-      <ion-input [type]="getInputType()" placeholder="Mot de passe"></ion-input>
+      <ion-input [(ngModel)]="password2" name="password2" [type]="getInputType()" placeholder="Confirmer le mot de passe"></ion-input>
       <!-- <ion-input></ion-input> -->
       <ion-icon [name]="isActive ? 'eye-off' : 'eye'" item-right (click)="isActive = !isActive;" isActive=true>
       </ion-icon>

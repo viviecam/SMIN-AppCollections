@@ -45,6 +45,8 @@ export class LoginPage {
           id: data.id,
           token: data.token,
         });
+      } else {
+        this.presentToast()
       }
     })
   }
@@ -58,7 +60,7 @@ export class LoginPage {
     let toast = this.toastCtrl.create({
       message: 'Email ou mot de passe incorrect.',
       duration: 3000,
-      position: 'top'
+      position: 'bottom'
     });
   
     toast.onDidDismiss(() => {
