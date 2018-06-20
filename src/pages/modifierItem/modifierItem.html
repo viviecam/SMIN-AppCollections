@@ -3,9 +3,16 @@
     <ion-navbar>
         <ion-title>Modifier un item</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only color="royal">
+            <!--Boutons pour enregistrer la modification de l'item -->
+            <button showWhen="ios" ion-button icon-only clear color="royal">
+                OK
+            </button>
+            <button showWhen="android" ion-button icon-only clear color="royal">
                 Enregistrer
             </button>
+            <!-- <button ion-button icon-only color="royal">
+                Enregistrer
+            </button> -->
         </ion-buttons>
     </ion-navbar>
 </ion-header>
@@ -26,7 +33,7 @@
 
         <ion-item>
             <button ion-button (click)="showActionSheetLoadItemImage()" ion-button default color="light" block>Ajouter une image</button>
-            <img *ngIf="img1" [src]="img1" width="100%"/> 
+            <img *ngIf="img1" [src]="img1" width="100%" />
             <!-- <ion-label color="primary" stacked>Ajouter une image</ion-label>
                         <ion-input type="file"></ion-input> -->
         </ion-item>

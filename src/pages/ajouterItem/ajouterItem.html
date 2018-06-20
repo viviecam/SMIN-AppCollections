@@ -1,41 +1,48 @@
 <!-- header -->
-    <ion-header>
-        <ion-navbar>
-            <ion-title>Ajouter un item</ion-title>
-            <ion-buttons end>
-                <button ion-button icon-only color="royal">
-                    Enregistrer
-                </button>
-            </ion-buttons>
-        </ion-navbar>
-    </ion-header>
-    
-    <!-- contenu -->
-    <ion-content>
-        <ion-list-header color="light">Item</ion-list-header>
-        <ion-list>
-            <ion-item>
-                <ion-label color="primary" stacked>Nom de l'item</ion-label>
-                <ion-input></ion-input>
-            </ion-item>
-    
-            <ion-item>
-                <ion-label color="primary" stacked>Description</ion-label>
-                <ion-input></ion-input>
-            </ion-item>
-    
-            <ion-item>
-                <button ion-button (click)="showActionSheetLoadItemImage()" ion-button default color="light" block>Ajouter une image</button>
-                <img *ngIf="img1" [src]="img1" width="100%"/> 
-                <!-- <ion-label color="primary" stacked>Ajouter une image</ion-label>
+<ion-header>
+    <ion-navbar>
+        <ion-title>Ajouter un item</ion-title>
+        <ion-buttons end>
+            <!-- Boutons pour enregistrer l'ajout de l'item -->
+            <button showWhen="ios" ion-button icon-only clear color="royal">
+                OK
+            </button>
+            <button showWhen="android" ion-button icon-only clear color="royal">
+                Enregistrer
+            </button>
+            <!-- <button ion-button icon-only color="royal">
+                Enregistrer
+            </button> -->
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<!-- contenu -->
+<ion-content>
+    <ion-list-header color="light">Item</ion-list-header>
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary" stacked>Nom de l'item</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Description</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button ion-button (click)="showActionSheetLoadItemImage()" ion-button default color="light" block>Ajouter une image</button>
+            <img *ngIf="img1" [src]="img1" width="100%" />
+            <!-- <ion-label color="primary" stacked>Ajouter une image</ion-label>
                 <ion-input type="file"></ion-input> -->
-            </ion-item>
-            
-            <!-- Champs personnalisés -->
-            <!-- <ion-item>
+        </ion-item>
+
+        <!-- Champs personnalisés -->
+        <!-- <ion-item>
                 <ion-label color="primary" floating>ajoute un champs pour ajouter ses propres champs</ion-label>
                 <ion-input></ion-input>
             </ion-item> -->
-    
-        </ion-list>
-    </ion-content>
+
+    </ion-list>
+</ion-content>
