@@ -26,6 +26,11 @@ export class CollectionSinglePage {
   datas:any;
   name:string;
   from:string;
+  carac:any;
+  infos:any;
+  caracs:any;
+  infosCaracs:any;
+  token:string;
 
   	constructor(public navCtrl: NavController, private popoverCtrl: PopoverController, private navParams: NavParams, public httpClient: HttpClient) {
   		this.id = navParams.get('id');
@@ -51,20 +56,31 @@ export class CollectionSinglePage {
   	}
 
   	more(myEvent) {
-	    let popover = this.popoverCtrl.create(MoreSinglePage);
+	    let popover = this.popoverCtrl.create(MoreSinglePage, {
+        idCollec: this.id,
+        token: this.token,
+        infosCaracs: this.infosCaracs,
+      });
 	    popover.present({
 	      	ev: myEvent
 	    });
   	}
 
   	load(){
+      this.caracs = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/carac/id/${this.id}`);
+      this.caracs
+      .subscribe(data => {
+        this.infosCaracs = data
+        console.log(data)
+        });
 	    this.items = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/datas/id/${this.id}`);
 	    this.items
 	    .subscribe(data => {
         if (data !== null){
           this.datas = data.collections[0].items
-          console.log(data)
         }
-    	})
+        this.infos = data
+        console.log(data)
+        })
+    	}
  	}
-}

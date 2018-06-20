@@ -7,7 +7,7 @@
             <button showWhen="ios" ion-button icon-only clear color="royal">
                 OK
             </button>
-            <button showWhen="android" ion-button icon-only clear color="royal">
+            <button showWhen="android" ion-button icon-only clear color="royal" (click)="addItem()">
                 Enregistrer
             </button>
             <!-- <button ion-button icon-only color="royal">
@@ -23,12 +23,7 @@
     <ion-list>
         <ion-item>
             <ion-label color="primary" stacked>Nom de l'item</ion-label>
-            <ion-input></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label color="primary" stacked>Description</ion-label>
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="nameCollec" name="nameCollec"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -37,6 +32,12 @@
             <!-- <ion-label color="primary" stacked>Ajouter une image</ion-label>
                 <ion-input type="file"></ion-input> -->
         </ion-item>
+            <div *ngFor="let item of infosCaracs; let i = index">
+                <ion-item>
+                    <ion-label color="primary" stacked>{{item.caracteristique_title}}</ion-label>
+                    <ion-input [(ngModel)]="value[i]" (input)="valChange($event.target.value, i, item.caracteristique_title, item.caracteristique_id)"></ion-input>
+                </ion-item>
+            </div>
 
         <!-- Champs personnalisés -->
         <!-- <ion-item>
