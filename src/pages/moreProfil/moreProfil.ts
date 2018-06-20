@@ -11,12 +11,21 @@ import { ProfileEditPage } from '../../pages/profileEdit/profileEdit';
 export class MoreProfilPage {
 
 	token:any;
-	id:number;;
+	id:number;
+	pseudo: string;
+	name:string;
+	firstname:string;
+	email:string;
 
   constructor(public navCtrl: NavController, private navParams: NavParams,) {
   	this.id = navParams.get('id');
     this.token = navParams.get('token');
-    console.log(this.token)
+    this.pseudo = navParams.get('pseudo');
+    this.name = navParams.get('name');
+    this.firstname = navParams.get('firstname');
+    this.email = navParams.get('email');
+    console.log(this.pseudo)
+    console.log(this.email)
   }
 
   openProfileEdit(): void{
@@ -24,6 +33,10 @@ export class MoreProfilPage {
     this.navCtrl.push(ProfileEditPage, {
       id: this.id,
       token: this.token,
+      pseudo:this.pseudo,
+      name: this.name,
+      firstname: this.firstname,
+      email: this.email,
     });
   }
 }

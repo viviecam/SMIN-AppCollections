@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, ToastController, ActionSheetController, Platform } from 'ionic-angular';
+import { NavController, LoadingController, ToastController, ActionSheetController, Platform, NavParams } from 'ionic-angular';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-ajouter',
@@ -17,17 +18,28 @@ export class AjouterPage {
 	imageURI:any;
 	imageFileName:any;
 	myStyle:string;
-	img1:any;
+	img1:any = "";
+  image:any;
+  id: number;
+  token: string;
+  idImage: string;
+  changeInfos: any;
+  options1: FileUploadOptions;
+  fileTransfer: FileTransferObject;
 
-  	constructor(public navCtrl: NavController,
-	  	private transfer: FileTransfer,
-	  	private camera: Camera,
-	  	public loadingCtrl: LoadingController,
-      public actionSheetCtrl: ActionSheetController,
-      public platform: Platform,
-      public toastCtrl: ToastController) {
-  		this.currentCarac = []
-		}
+	constructor(public navCtrl: NavController,
+  	private transfer: FileTransfer,
+  	private camera: Camera,
+  	public loadingCtrl: LoadingController,
+    public actionSheetCtrl: ActionSheetController,
+    public platform: Platform,
+    private navParams: NavParams,
+    public httpClient: HttpClient,
+    public toastCtrl: ToastController) {
+		this.currentCarac = []
+    this.id = navParams.get('id');
+    this.token = navParams.get('token');
+	}
 
   addCaract(){
   	if (this.carac != ""){
@@ -50,10 +62,24 @@ export class AjouterPage {
           text: 'Prendre une photo',
           icon: !this.platform.is('ios') ? 'image' : null,
           handler: () => {
-            // this.camera.getPicture(this.options).then((imageData) => {
-            //  this.base64Image = 'data:image/jpeg;base64,' + imageData;
-            // }, (err) => {
-            // });
+            this.idImage = Math.random().toString(36).substr(2, 16);
+            let options = {
+              quality: 50,
+              encodingType: this.camera.EncodingType.JPEG,
+              correctOrientation: true,
+              targetWidth: 300,
+              targetHeight: 300
+            };
+            this.camera.getPicture(options).then((imageData) => {
+              this.fileTransfer = this.transfer.create();
+              this.options1 = {
+                 fileKey: 'file',
+                 fileName: this.idImage + '.jpg',
+                 headers: {}
+              }
+              this.img1 = imageData;
+              console.log(this.img1)
+            });
           }
         },
         {
@@ -168,8 +194,30 @@ presentToast(msg) {
   }
 
   addCollection(){
-  	if (this.nameCollec === '' || this.descCollec === ''){
-  		console.log('pas')
+    console.log('anthony', this.img1)
+    console.log('groscaca', this.idImage)
+  	if (this.nameCollec !== '' && this.descCollec !== '' && this.currentCarac.length !== 0){
+  		this.changeInfos = this.httpClient.post('https://collectionback-bricebricebricemmi.c9users.io/new/collection/tok/' + this.token, 
+        { 
+          id: this.id, 
+          title: this.nameCollec, 
+          description: this.descCollec,
+          image: this.idImage + '.jpg',
+          carac: this.currentCarac,
+        })
+        this.changeInfos
+        .subscribe(data => {
+          console.log(data)
+        })
+
+        this.fileTransfer.upload(this.img1, 'https://collectionback-bricebricebricemmi.c9users.io/update/image/tok/test', this.options1)
+         .then((data) => {
+           console.log(data)
+           alert("success");
+         }, (err) => {
+           // error
+           alert("error"+JSON.stringify(err));
+         });
   	} else {
   		console.log('ok')
   	}

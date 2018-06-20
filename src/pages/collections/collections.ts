@@ -15,9 +15,11 @@ export class CollectionsPage {
   collections:any;
   datas:any;
   id:number;
+  token:string;
 
   constructor(public navCtrl: NavController, public httpClient: HttpClient, private navParams: NavParams) {  
     this.id = navParams.data.id;
+    this.token = navParams.data.token;
     console.log(navParams.data)
   }
 
@@ -46,6 +48,10 @@ export class CollectionsPage {
  	}
 
   ajouter(): void{
-    this.navCtrl.push(AjouterPage);
-  }
+    console.log(this.id)
+    this.navCtrl.push(AjouterPage, {
+      id: this.id,
+      token: this.token,
+    });
+}
 }

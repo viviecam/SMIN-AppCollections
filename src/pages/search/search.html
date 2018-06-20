@@ -7,17 +7,17 @@
 
 <!-- contenu -->
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="search" name="search" (change)="onSearch()"></ion-searchbar>
   <ion-list>
     <!-- <ion-item *ngFor="let item of items"> -->
     <ion-item>      
-      <ion-card>
+      <ion-card *ngFor="let item of datas">
 
-        <img src="../../assets/imgs/collections.png">
+        <img src="{{'https://collectionback-bricebricebricemmi.c9users.io/images/' + item.image}}">
       
         <ion-item>
-          <h2>Nom de la collection</h2>
-          <p>Pseudo de l'auteur</p>
+          <h2>{{item.title}}</h2>
+          <p>{{item.pseudo}}</p>
         </ion-item>
       
         <ion-item>

@@ -2,12 +2,12 @@
   <ion-navbar>
 
     <ion-buttons end>
-      <!-- Boutons pour enregistrer les changements d'infos dans le profil -->
-      <button showWhen="ios" ion-button icon-only clear>
-        <p color="primary" (click)="retourProfilePage()">OK</p>
-      </button>
-      <button showWhen="android" ion-button icon-only clear>
-          <p color="primary" (click)="retourProfilePage()">Enregistrer</p>
+      <!--Boutons pour valider les changements d'infos -->
+      <button showWhen="ios" ion-button icon-only clear color="royal" (click)="retourProfilePage()">
+            OK
+        </button>
+        <button showWhen="android" ion-button icon-only clear color="royal" (click)="saveProfil()">
+            Enregistrer
         </button>
       <!-- <button showWhen="android" ion-button icon-only clear>
         <ion-icon name="more"></ion-icon>
@@ -30,24 +30,23 @@
 
     <ion-item>
       <ion-label color="primary" stacked>Pseudo</ion-label>
-      <ion-input type="text" value="Totodu38"></ion-input>
+      <ion-input [(ngModel)]="pseudo" name="pseudo" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>Prénom</ion-label>
-      <ion-input type="text" value="Toto"></ion-input>
+      <ion-input [(ngModel)]="name" name="name" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>Nom</ion-label>
-      <ion-input type="text" value="sansfamille"></ion-input>
+      <ion-input [(ngModel)]="firstname" name="firstname" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>E-mail</ion-label>
-      <ion-input type="email" value="toto@sansfamille.com"></ion-input>
+      <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
     </ion-item>
-
   </ion-list>
 
   <ion-list>

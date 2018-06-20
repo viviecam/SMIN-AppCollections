@@ -61,8 +61,10 @@ export class CollectionSinglePage {
 	    this.items = this.httpClient.get(`https://collectionback-bricebricebricemmi.c9users.io/list/datas/id/${this.id}`);
 	    this.items
 	    .subscribe(data => {
-      		this.datas = data.collections[0].items
+        if (data !== null){
+          this.datas = data.collections[0].items
           console.log(data)
+        }
     	})
  	}
 }

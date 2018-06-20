@@ -13,6 +13,12 @@ export class ProfileEditPage {
 
   id:number;
   token:string;
+  pseudo: string;
+  name:string;
+  firstname:string;
+  email:string;
+  image:any;
+  changeInfos:any;
 
   constructor(
     public navCtrl: NavController,
@@ -27,7 +33,11 @@ export class ProfileEditPage {
   ) { 
     this.id = navParams.get('id');
     this.token = navParams.get('token');
-    console.log(this.token)
+    this.pseudo = navParams.get('pseudo');
+    this.name = navParams.get('name');
+    this.firstname = navParams.get('firstname');
+    this.email = navParams.get('email');
+    console.log(this.email)
   }
 
   fileTransfer: FileTransferObject = this.transfer.create();
@@ -40,6 +50,25 @@ export class ProfileEditPage {
 
   getInputType() {
     return this.isActive ? 'password' : 'text';
+  }
+
+  saveProfil(){
+    console.log(this.pseudo)
+    if (this.pseudo !== "" && this.name !== "" && this.firstname !== "" && this.email !== ""){
+      this.changeInfos = this.httpClient.post('https://collectionback-bricebricebricemmi.c9users.io/update/user/tok/' + this.token, 
+        { 
+          id: this.id,
+          firstname: this.firstname,
+          name: this.name,
+          pseudo: this.pseudo,
+          email : this.email,
+
+        })
+        this.changeInfos
+        .subscribe(data => {
+          this.navCtrl.pop();
+        })
+    }
   }
 
   /* Retour à la page du profil */
@@ -81,15 +110,18 @@ export class ProfileEditPage {
                alert("error"+JSON.stringify(err));
              });
             });
-             /*this.changeImage = this.httpClient.post('https://collectionback-bricebricebricemmi.c9users.io/changeImage', 
+             this.changeImage = this.httpClient.post('https://collectionback-bricebricebricemmi.c9users.io/update/imguser/tok/' + this.token, 
               { 
-                image: id,
+                image: id + '.jpg',
                 id: this.id
               })
               this.changeImage
               .subscribe(data => {
-                console.log('ok');
-              })*/
+                console.log('anthony', data);
+              }, (err) => {
+               // error
+                console.log(err)
+              });
           }
         },
         {

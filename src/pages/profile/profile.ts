@@ -15,6 +15,7 @@ export class ProfilePage {
   datas:any;
   id:number;
   token:string;
+  img:string;
 
   constructor(public navCtrl: NavController, private popoverCtrl : PopoverController, public httpClient: HttpClient, private navParams: NavParams,) { 
     this.id = navParams.data.id;
@@ -34,19 +35,16 @@ export class ProfilePage {
     let popover = this.popoverCtrl.create(MoreProfilPage, {
       id: this.id,
       token: this.token,
+      pseudo: this.datas[0].pseudo,
+      name: this.datas[0].name,
+      firstname: this.datas[0].firstname,
+      email: this.datas[0].email,
     });
     popover.present({
       ev: myEvent,
     });
   }
 
-  openProfileEdit(): void{
-    console.log(this.token)
-    this.navCtrl.push(ProfileEditPage, {
-      id: this.id,
-      token: this.token,
-    });
-  }
 
   openLoginPage(){
     this.navCtrl.push(LoginPage);
@@ -61,6 +59,11 @@ export class ProfilePage {
     this.myProfil
     .subscribe(data => {
       console.log(data)
+      if (data[0].image === null){
+        this.img = 'bb8.jpg'
+      } else {
+        this.img = data[0].image
+      }
       this.datas = data
     })
   }
