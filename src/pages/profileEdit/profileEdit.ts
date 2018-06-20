@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, ActionSheetController, Platform } from 'ionic-angular';
+import { NavController, ActionSheetController, Platform, NavParams, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-profile-edit',
@@ -10,30 +11,32 @@ import { File } from '@ionic-native/file';
 })
 export class ProfileEditPage {
 
+  id:number;
+  token:string;
+
   constructor(
     public navCtrl: NavController,
     public actionSheetCtrl: ActionSheetController,
     public platform: Platform,
     private camera: Camera,
     private transfer: FileTransfer, 
-    private file: File
-  ) { }
+    private file: File,
+    public httpClient: HttpClient,
+    private navParams: NavParams,
+    private toastCtrl: ToastController,
+  ) { 
+    this.id = navParams.get('id');
+    this.token = navParams.get('token');
+    console.log(this.token)
+  }
 
   fileTransfer: FileTransferObject = this.transfer.create();
-
-  options: CameraOptions = {
-    quality: 50,
-    destinationType: this.camera.DestinationType.DATA_URL,
-    encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.PICTURE,
-    targetWidth: 300,
-    targetHeight: 300
-  }
 
   /* Bouton afficher/masquer mot de passe */
   type: string = "text";
   isActive: Boolean = false;
   base64Image: any;
+  changeImage: any;
 
   getInputType() {
     return this.isActive ? 'password' : 'text';
@@ -54,10 +57,39 @@ export class ProfileEditPage {
           text: 'Prendre une photo',
           icon: !this.platform.is('ios') ? 'image' : null,
           handler: () => {
-            this.camera.getPicture(this.options).then((imageData) => {
-             this.base64Image = 'data:image/jpeg;base64,' + imageData;
-            }, (err) => {
+            let id = Math.random().toString(36).substr(2, 16);
+            let options = {
+              quality: 50,
+              encodingType: this.camera.EncodingType.JPEG,
+              correctOrientation: true,
+              targetWidth: 300,
+              targetHeight: 300
+            };
+            this.camera.getPicture(options).then((imageData) => {
+            const fileTransfer: FileTransferObject = this.transfer.create();
+            let options1: FileUploadOptions = {
+               fileKey: 'file',
+               fileName: id + '.jpg',
+               headers: {}
+            }
+            fileTransfer.upload(imageData, 'https://collectionback-bricebricebricemmi.c9users.io/update/image/tok/test', options1)
+             .then((data) => {
+               console.log(data)
+               alert("success");
+             }, (err) => {
+               // error
+               alert("error"+JSON.stringify(err));
+             });
             });
+             /*this.changeImage = this.httpClient.post('https://collectionback-bricebricebricemmi.c9users.io/changeImage', 
+              { 
+                image: id,
+                id: this.id
+              })
+              this.changeImage
+              .subscribe(data => {
+                console.log('ok');
+              })*/
           }
         },
         {

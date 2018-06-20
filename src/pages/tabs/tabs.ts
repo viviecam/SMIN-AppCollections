@@ -11,11 +11,14 @@ import { ProfilePage } from '../profile/profile';
 })
 export class TabsPage {
 
-	id:number;
+	infos:any;
 
 	constructor(public navCtrl: NavController, private navParams: NavParams) {  
-    this.id = navParams.get('id');
-    console.log(this.id)
+    this.infos = {
+    	id: navParams.get('id'),
+    	token: navParams.get('token'),
+    }
+    console.log(navParams.get('token'))
   }
 
   tab1Root = CollectionsPage;

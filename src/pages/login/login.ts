@@ -43,7 +43,7 @@ export class LoginPage {
       if (data !== "null"){
         this.navCtrl.push(TabsPage, {
           id: data.id,
-          token: data.token,
+          token: data.jwt,
         });
       } else {
         this.presentToast()

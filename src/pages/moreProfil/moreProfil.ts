@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, PopoverController, NavParams} from 'ionic-angular';
 import { AjouterItemPage } from '../../pages/ajouterItem/ajouterItem';
 import { ProfileEditPage } from '../../pages/profileEdit/profileEdit';
 
@@ -10,9 +10,20 @@ import { ProfileEditPage } from '../../pages/profileEdit/profileEdit';
 })
 export class MoreProfilPage {
 
-  constructor(public navCtrl: NavController) { }
+	token:any;
+	id:number;;
+
+  constructor(public navCtrl: NavController, private navParams: NavParams,) {
+  	this.id = navParams.get('id');
+    this.token = navParams.get('token');
+    console.log(this.token)
+  }
 
   openProfileEdit(): void{
-    this.navCtrl.push(ProfileEditPage);
+    console.log(this.token)
+    this.navCtrl.push(ProfileEditPage, {
+      id: this.id,
+      token: this.token,
+    });
   }
 }

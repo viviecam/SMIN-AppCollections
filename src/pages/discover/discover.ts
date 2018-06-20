@@ -17,7 +17,7 @@ export class DiscoverPage {
 
 
   	constructor(public navCtrl: NavController, public httpClient: HttpClient, private navParams: NavParams) {  
-  		this.id = navParams.data;
+  		this.id = navParams.data.id;
   	}
 
 	ionViewWillEnter(){

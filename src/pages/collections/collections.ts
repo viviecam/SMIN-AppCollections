@@ -17,7 +17,7 @@ export class CollectionsPage {
   id:number;
 
   constructor(public navCtrl: NavController, public httpClient: HttpClient, private navParams: NavParams) {  
-    this.id = navParams.data;
+    this.id = navParams.data.id;
     console.log(navParams.data)
   }
 
