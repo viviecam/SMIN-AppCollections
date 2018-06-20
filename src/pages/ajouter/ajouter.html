@@ -1,65 +1,62 @@
 <!-- header -->
 <ion-header>
-    <ion-navbar>
-        <ion-title>Ajouter Collection</ion-title>
-        <ion-buttons end>
-            <button ion-button icon-only color="royal" (click)="addCollection()">
-                Enregistrer
-            </button>
-        </ion-buttons>
-    </ion-navbar>
-</ion-header>
-
-<!-- contenu -->
-<ion-content padding>
-    <ion-list>
-
-        <h2>Informations de la collections</h2>
-        <ion-item>
-            <ion-label color="primary" floating>Nom de la collection</ion-label>
-            <ion-input [(ngModel)]="nameCollec"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label color="primary" floating>Description</ion-label>
-            <ion-input [(ngModel)]="descCollec"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label color="primary" stacked>Ajouter une image</ion-label>
-            <ion-input type="file" value="" (change)="fileChange($event)"></ion-input>
-        </ion-item>
-        <ion-item>
-            <img *ngIf="img1" [src]="img1" width="100%"/>
-        </ion-item>
-
-    </ion-list>
-
-    <ion-list>
-        <h2>Caractéristiques des items</h2>
-        <ion-list *ngFor="let item of currentCarac; let i = index" class="addedCarac">
+        <ion-navbar>
+            <ion-title>Ajouter Collection</ion-title>
+            <ion-buttons end>
+                <button ion-button icon-only color="royal" (click)="addCollection()">
+                    Enregistrer
+                </button>
+            </ion-buttons>
+        </ion-navbar>
+    </ion-header>
+    <ion-content >
+        <ion-list-header color="light">Informations de la collections</ion-list-header>
+        <ion-list>
             <ion-item>
-                <p class="{{myStyle}}">{{item}}</p>
-                <ion-icon name="close" item-end (click)="deleteCarac(i)"></ion-icon>
+                <ion-label color="primary" floating>Nom de la collection</ion-label>
+                <ion-input [(ngModel)]="nameCollec"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label color="primary" floating>Description</ion-label>
+                <ion-input [(ngModel)]="descCollec"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary" stacked>Ajouter une image</ion-label>
+                <ion-input type="file" value="" (change)="fileChange($event)"></ion-input>
+            </ion-item>
+            <ion-item>
+                <img *ngIf="img1" [src]="img1" width="100%"/>
             </ion-item>
         </ion-list>
-        <ion-item>
-            <ion-label color="primary" floating>Titre de la caractéristique</ion-label>
-            <ion-input [(ngModel)]="carac"></ion-input>
-        </ion-item>
-        <ion-item>
-            <button (click)="addCaract()">Ajouter la caractéristique</button>
-        </ion-item>
-    </ion-list>
-    <!-- <ion-item>
-        <p>{{imageURI}}</p>
-        <button ion-button color="secondary" (click)="getImage()">Get Image</button>
-      </ion-item>
-      <ion-item>
-        <h4>Image Preview</h4>
-        <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
-      </ion-item>
-      <ion-item>
-        <button ion-button (click)="uploadFile()">Upload</button>
-      </ion-item> -->
-</ion-content>
+        
+        <ion-list-header color="light">Caractéristiques des items</ion-list-header>
+        <ion-list>
+            <ion-list *ngFor="let item of currentCarac; let i = index" class="addedCarac">
+                <ion-item>
+                    <p class="{{myStyle}}">{{item}}</p>
+                    <ion-icon name="close" item-end (click)="deleteCarac(i)"></ion-icon>
+                </ion-item>
+            </ion-list>
+            <ion-item>
+                <ion-label color="primary" floating>Titre de la caractéristique</ion-label>
+                <ion-input [(ngModel)]="carac"></ion-input>
+            </ion-item>
+            <ion-item>
+                <button (click)="addCaract()">Ajouter la caractéristique</button>
+            </ion-item>
+        </ion-list>
+        <!-- <ion-item>
+            <p>{{imageURI}}</p>
+            <button ion-button color="secondary" (click)="getImage()">Get Image</button>
+          </ion-item>
+          <ion-item>
+            <h4>Image Preview</h4>
+            <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+          </ion-item>
+          <ion-item>
+            <button ion-button (click)="uploadFile()">Upload</button>
+          </ion-item> -->
+    </ion-content>
+    
+       

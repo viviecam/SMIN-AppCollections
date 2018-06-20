@@ -55,11 +55,8 @@ export class ProfileEditPage {
           icon: !this.platform.is('ios') ? 'image' : null,
           handler: () => {
             this.camera.getPicture(this.options).then((imageData) => {
-             // imageData is either a base64 encoded string or a file URI
-             // If it's base64:
              this.base64Image = 'data:image/jpeg;base64,' + imageData;
             }, (err) => {
-             // Handle error
             });
           }
         },
@@ -72,7 +69,6 @@ export class ProfileEditPage {
              fileName: 'name.jpg',
              headers: {}
           }
-
           this.fileTransfer.upload('<file path>', '<api endpoint>', options)
            .then((data) => {
              // success
@@ -85,14 +81,14 @@ export class ProfileEditPage {
           role: 'destructive',
           icon: !this.platform.is('ios') ? 'trash' : null,
           handler: () => {
-            console.log('Delete avatar clicked');
+            // console.log('Delete avatar clicked');
           }
         }, {
-          text: 'Cancel',
+          text: 'Annuler',
           role: 'cancel',
           icon: !this.platform.is('ios') ? 'close' : null,
           handler: () => {
-            console.log('Cancel clicked');
+            // console.log('Cancel clicked');
           }
         }
       ]
