@@ -134,6 +134,7 @@ export class AjouterItemPage {
          .then((data) => {
            console.log(data)
            alert("success");
+           this.navCtrl.pop();
          }, (err) => {
            // error
            alert("error"+JSON.stringify(err));
