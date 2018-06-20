@@ -2,10 +2,13 @@
   <ion-navbar>
 
     <ion-buttons end>
-      <!--Boutons pour valider les changements d'infos -->
+      <!-- Boutons pour enregistrer les changements d'infos dans le profil -->
       <button showWhen="ios" ion-button icon-only clear>
         <p color="primary" (click)="retourProfilePage()">OK</p>
       </button>
+      <button showWhen="android" ion-button icon-only clear>
+          <p color="primary" (click)="retourProfilePage()">Enregistrer</p>
+        </button>
       <!-- <button showWhen="android" ion-button icon-only clear>
         <ion-icon name="more"></ion-icon>
       </button> -->

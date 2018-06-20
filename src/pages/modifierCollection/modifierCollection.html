@@ -1,41 +1,60 @@
 <!-- header -->
 <ion-header>
-        <ion-navbar>
-            <ion-title>Modifier la collection</ion-title>
-            <ion-buttons end>
-                <button ion-button icon-only color="royal">
-                    Enregistrer
-                </button>
-            </ion-buttons>
-        </ion-navbar>
-    </ion-header>
-    
-    <!-- contenu -->
-    <ion-content>
-        <ion-list-header color="light">Modifier la collection</ion-list-header>
-        <ion-list>
-            <!-- il faut récupérer les anciennes valeurs -->
+    <ion-navbar>
+        <ion-title>Modifier la collection</ion-title>
+        <ion-buttons end>
+            <!--Boutons pour enregistrer la modification de la collection -->
+            <button showWhen="ios" ion-button icon-only clear color="royal">
+                OK
+            </button>
+            <button showWhen="android" ion-button icon-only clear color="royal">
+                Enregistrer
+            </button>
+            <!-- <button ion-button icon-only color="royal">
+                Enregistrer
+            </button> -->
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<!-- contenu -->
+<ion-content>
+    <ion-list-header color="light">Modifier la collection</ion-list-header>
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary" stacked>Nom de la collection</ion-label>
+            <ion-input [(ngModel)]="nameCollec"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Description</ion-label>
+            <ion-input [(ngModel)]="descCollec"></ion-input>
+        </ion-item>
+        <ion-item>
+            <button ion-button (click)="showActionSheetLoadCollectionImage()" ion-button default color="light" block>Ajouter une image</button>
+            <img *ngIf="img1" [src]="img1" width="100%" />
+            <!-- <ion-label color="primary" stacked>Ajouter une image</ion-label>
+                <ion-input type="file" value="" (change)="fileChange($event)"></ion-input> -->
+        </ion-item>
+        <!-- <ion-item>
+                
+            </ion-item> -->
+    </ion-list>
+
+    <ion-list-header color="light">Caractéristiques des items</ion-list-header>
+    <ion-list>
+        <ion-list *ngFor="let item of currentCarac; let i = index" class="addedCarac">
             <ion-item>
-                <ion-label color="primary" floating>Nom de la collection</ion-label>
-                <ion-input></ion-input>
-            </ion-item>
-    
-            <ion-item>
-                <ion-label color="primary" floating>Description</ion-label>
-                <ion-input></ion-input>
-            </ion-item>
-    
-            <ion-item>
-                <ion-label color="primary" stacked>Modifier une image</ion-label>
-                <ion-input type="file"></ion-input>
-            </ion-item>
-    
-            <ion-item>
-                <ion-label color="primary" floating>ajoute un champs pour ajouter ses propres champs</ion-label>
-                <ion-input></ion-input>
+                <p class="{{myStyle}}">{{item}}</p>
+                <ion-icon name="close" item-end (click)="deleteCarac(i)"></ion-icon>
             </ion-item>
         </ion-list>
-    </ion-content>
-    
-    
-    
+        <ion-item>
+            <ion-label color="primary" stacked>Titre de la caractéristique</ion-label>
+            <ion-input [(ngModel)]="carac"></ion-input>
+        </ion-item>
+        <ion-item>
+            <button ion-button default block color="primary" (click)="addCaract()">Ajouter la caractéristique</button>
+        </ion-item>
+    </ion-list>
+</ion-content>

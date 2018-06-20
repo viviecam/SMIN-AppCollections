@@ -22,9 +22,10 @@ export class LoginPage {
     private toastCtrl: ToastController,
     public httpClient: HttpClient) {
   }
-  
+
+
   /* Bouton afficher/masquer mot de passe */
-  type: string = "password";
+  type: string = "text";
   isActive: Boolean = false;
 
   getInputType() {
