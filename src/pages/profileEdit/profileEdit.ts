@@ -44,7 +44,7 @@ export class ProfileEditPage {
     this.navCtrl.pop();
   }
 
-  /* iOS : Affiche l'action sheet pour modifier l'avatar du profil */
+  /* Affiche l'action sheet pour modifier l'avatar du profil */
   showActionSheetChangeAvatar() {
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Modifier votre avatar',

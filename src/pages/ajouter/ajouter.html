@@ -13,21 +13,23 @@
         <ion-list-header color="light">Informations de la collections</ion-list-header>
         <ion-list>
             <ion-item>
-                <ion-label color="primary" floating>Nom de la collection</ion-label>
+                <ion-label color="primary" stacked>Nom de la collection</ion-label>
                 <ion-input [(ngModel)]="nameCollec"></ion-input>
             </ion-item>
     
             <ion-item>
-                <ion-label color="primary" floating>Description</ion-label>
+                <ion-label color="primary" stacked>Description</ion-label>
                 <ion-input [(ngModel)]="descCollec"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label color="primary" stacked>Ajouter une image</ion-label>
-                <ion-input type="file" value="" (change)="fileChange($event)"></ion-input>
+            <button ion-button (click)="showActionSheetLoadCollectionImage()" ion-button default color="light" block>Ajouter une image</button>
+                <img *ngIf="img1" [src]="img1" width="100%"/>    
+                <!-- <ion-label color="primary" stacked>Ajouter une image</ion-label>
+                <ion-input type="file" value="" (change)="fileChange($event)"></ion-input> -->
             </ion-item>
-            <ion-item>
-                <img *ngIf="img1" [src]="img1" width="100%"/>
-            </ion-item>
+            <!-- <ion-item>
+                
+            </ion-item> -->
         </ion-list>
         
         <ion-list-header color="light">Caractéristiques des items</ion-list-header>
@@ -39,11 +41,11 @@
                 </ion-item>
             </ion-list>
             <ion-item>
-                <ion-label color="primary" floating>Titre de la caractéristique</ion-label>
+                <ion-label color="primary" stacked>Titre de la caractéristique</ion-label>
                 <ion-input [(ngModel)]="carac"></ion-input>
             </ion-item>
             <ion-item>
-                <button (click)="addCaract()">Ajouter la caractéristique</button>
+                <button ion-button default block color="primary" (click)="addCaract()">Ajouter la caractéristique</button>
             </ion-item>
         </ion-list>
         <!-- <ion-item>
